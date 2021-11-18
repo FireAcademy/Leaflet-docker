@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
 
-ln -snf "/usr/share/zoneinfo/UTC" /etc/localtime && echo "UTC" > /etc/timezone
+chia start node
 
-cd /chia-blockchain || exit 1
+trap "chia stop all -d; exit 0" SIGINT SIGTERM
 
-. ./activate
+touch "$CHIA_ROOT/log/debug.log"
+tail -F "$CHIA_ROOT/log/debug.log" &
 
-chia init --fix-ssl-permissions
-
-chia keys generate
-chia configure --upnp "false"
-chia configure --log-level "INFO"
-
-sed -i 's/localhost/127.0.0.1/g' "$CHIA_ROOT/config/config.yaml"
-sed -i 's/log_stdout: true/log_stdout: false/g' "$CHIA_ROOT/config/config.yaml"
-
-exec "$@"
+while true; do sleep 1; done

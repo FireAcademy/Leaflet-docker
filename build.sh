@@ -1,1 +1,1 @@
-docker build -t chia --build-arg BRANCH=latest .
+docker build -t leaflet --build-arg BRANCH=latest .
