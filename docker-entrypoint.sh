@@ -2,6 +2,11 @@
 
 ln -snf "/usr/share/zoneinfo/UTC" /etc/localtime && echo "UTC" > /etc/timezone
 
+cd /leaflet/ssl || exit 1
+
+echo "${SERVER_CRT}" > server.crt
+echo "${SERVER_KEY}" > server.key
+
 cd /chia-blockchain || exit 1
 
 . ./activate

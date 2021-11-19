@@ -18,6 +18,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
     ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime && echo "$TZ" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
+    chmod +x nodesource_setup.sh && \
+    ./nodesource_setup.sh && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
+
+RUN git config --global core.autocrlf input && \
+    git clone --branch master https://github.com/FireAcademy/leaflet && \
+    cd leaflet && \
+    npm install
+
 ARG BRANCH=latest
 
 RUN echo "cloning ${BRANCH}" && \
@@ -31,6 +41,8 @@ WORKDIR /chia-blockchain
 
 COPY docker-start.sh /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
+
+EXPOSE 18444
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["docker-start.sh"]
