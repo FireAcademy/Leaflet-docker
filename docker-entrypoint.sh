@@ -20,6 +20,5 @@ chia configure --log-level "INFO"
 sed -i 's/localhost/127.0.0.1/g' "$CHIA_ROOT/config/config.yaml"
 sed -i 's/log_stdout: true/log_stdout: false/g' "$CHIA_ROOT/config/config.yaml"
 sed -i 's/target_outbound_peer_count: 8/target_outbound_peer_count: 20/g' "$CHIA_ROOT/config/config.yaml"
-sed -i 's/max_inbound_wallet: 20/max_inbound_wallet: 42/g' "$CHIA_ROOT/config/config.yaml"
 
 exec "$@"
