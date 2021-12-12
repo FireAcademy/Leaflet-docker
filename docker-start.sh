@@ -8,4 +8,4 @@ touch "$CHIA_ROOT/log/debug.log"
 tail -F "$CHIA_ROOT/log/debug.log" &
 
 cd /leaflet
-npm start
+REPORT_HEALTH=1 npm start
