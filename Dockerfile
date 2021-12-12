@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-EXPOSE 8444
-
 ENV CHIA_ROOT=/root/.chia/mainnet
 ENV keys="generate"
 ENV harvester="false"
