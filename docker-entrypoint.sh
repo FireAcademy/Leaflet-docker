@@ -7,6 +7,12 @@ cd /leaflet/ssl || exit 1
 echo "${SERVER_CRT}" > server.crt
 echo "${SERVER_KEY}" > server.key
 
+if [ -z ${FASTSYNC_URL+x} ]; then
+	echo "FastSync URL not set";
+else 
+	mkdir -p "$CHIA_ROOT/db";
+	wget "${FASTSYNC_URL}" -O "$CHIA_ROOT/db/blockchain_v1_mainnet.sqlite"
+fi
 
 
 cd /chia-blockchain || exit 1
