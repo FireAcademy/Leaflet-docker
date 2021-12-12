@@ -13,7 +13,7 @@ cd /chia-blockchain || exit 1
 
 chia init --fix-ssl-permissions
 
-chia keys generate
+# chia keys generate
 chia configure --upnp "false"
 chia configure --log-level "INFO"
 

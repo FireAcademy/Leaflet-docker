@@ -42,7 +42,5 @@ WORKDIR /chia-blockchain
 COPY docker-start.sh /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
 
-EXPOSE 18444
-
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["docker-start.sh"]

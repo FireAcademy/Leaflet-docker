@@ -1,5 +1,0 @@
-## FastSync
-
-When the docker first starts (there is no /root/.fastsync)
-See if FAST_SYNC_URL env var was set. If it was, treat its value as an url and download to /root/.chia/mainnet/db/blockchain_v1_mainnet.sqlite
-Ideally, the FastSync server will be in the same DO data center so the traffic won't be charged
