@@ -6,7 +6,10 @@ if [ -z ${FASTSYNC_URL+x} ]; then
 	echo "FastSync URL not set";
 else 
 	mkdir -p "$CHIA_ROOT/db";
-	wget "${FASTSYNC_URL}" -O "$CHIA_ROOT/db/blockchain_v1_mainnet.sqlite"
+	cd "$CHIA_ROOT/db";
+	wget "${FASTSYNC_URL}" -O blockchain_v1_mainnet.sqlite.zip;
+	unzip blockchain_v1_mainnet.sqlite.zip;
+	rm blockchain_v1_mainnet.sqlite.zip;
 fi
 
 

@@ -37,6 +37,7 @@ RUN echo "cloning ${BRANCH}" && \
 ENV PATH=/chia-blockchain/venv/bin:$PATH
 WORKDIR /chia-blockchain
 
+RUN apt-get install -y zip unzip
 COPY docker-start.sh /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
 
