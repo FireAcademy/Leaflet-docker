@@ -23,8 +23,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
 
 RUN git config --global core.autocrlf input && \
     git clone --branch master https://github.com/FireAcademy/leaflet && \
-    cd leaflet && \
-    npm install
+    cd leaflet  && \
+    npm install 
 
 ARG BRANCH=latest
 
