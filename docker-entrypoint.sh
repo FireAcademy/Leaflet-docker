@@ -7,9 +7,7 @@ if [ -z ${FASTSYNC_URL+x} ]; then
 else 
 	mkdir -p "$CHIA_ROOT/db";
 	cd "$CHIA_ROOT/db";
-	wget "${FASTSYNC_URL}" -O blockchain_v1_mainnet.sqlite.zip;
-	unzip -o blockchain_v1_mainnet.sqlite.zip;
-	rm blockchain_v1_mainnet.sqlite.zip;
+	wget "${FASTSYNC_URL}" -O blockchain_v1_mainnet.sqlite;
 fi
 
 
