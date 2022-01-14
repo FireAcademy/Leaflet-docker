@@ -42,4 +42,4 @@ COPY docker-start.sh /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["docker-start.sh"]
+CMD ["/bin/bash", "-c", "docker-start.sh"]
