@@ -22,7 +22,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
 RUN git config --global core.autocrlf input && \
-    REVISION=2 git clone --branch master https://github.com/FireAcademy/leaflet && \
+    REVISION=3 git clone --branch master https://github.com/FireAcademy/leaflet && \
     cd leaflet && \
     npm install 
 
