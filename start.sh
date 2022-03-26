@@ -14,4 +14,4 @@ touch "$CHIA_ROOT/log/debug.log"
 
 tmux new -d -s "leaflet" "cd /leaflet; REPORT_METRICS=1 npm start"
 
-while true; do sleep 1; done
+tmux attach -t "leaflet"

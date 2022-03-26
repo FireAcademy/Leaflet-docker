@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 RUN cd / && \
     git config --global core.autocrlf input && \
-    git clone --branch master https://github.com/FireAcademy/leaflet && \
+    git clone --branch master https://github.com/FireAcademy/leaflet/ && \
     cd leaflet && \
     npm install 
 
