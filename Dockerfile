@@ -11,11 +11,11 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
-    git wget
+    git wget tmux
 
 RUN cd / && \
     git config --global core.autocrlf input && \
-    git clone --branch master https://github.com/FireAcademy/leaflet && \
+    git clone --branch master https://github.com/FireAcademy/leaflet/ && \
     cd leaflet && \
     npm install 
 
