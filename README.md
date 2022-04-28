@@ -3,5 +3,5 @@
 Kudos to [this repo](https://github.com/Chia-Network/chia-docker)
 
 ```
-ghcr.io/fireacademy/leaflet:1.1.7
+ghcr.io/fireacademy/leaflet:1.1.8
 ```
