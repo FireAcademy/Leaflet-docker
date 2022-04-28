@@ -13,9 +13,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     git wget tmux
 
+# ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN cd / && \
     git config --global core.autocrlf input && \
-    REV=1 git clone --branch master https://github.com/FireAcademy/leaflet && \
+    git clone --branch master https://github.com/FireAcademy/leaflet && \
     cd leaflet && \
     npm install 
 

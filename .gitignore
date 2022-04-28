@@ -1,3 +1,4 @@
 .chia/
 .chia-old/
 private/
+test-docker.sh

@@ -12,5 +12,5 @@ chia start node
 
 touch "$CHIA_ROOT/log/debug.log"
 
-tmux new -d -s "leaflet" "cd /leaflet; REPORT_METRICS=1 npm start; tmux wait -S leaflet"
+tmux new -d -s "leaflet" "cd /leaflet; while true; do REPORT_METRICS=1 testnet=$testnet npm start; done;"
 tmux wait leaflet
