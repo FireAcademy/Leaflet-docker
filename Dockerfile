@@ -16,7 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 # ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN cd / && \
     git config --global core.autocrlf input && \
-    git clone --branch master https://github.com/FireAcademy/leaflet && \
+    git clone https://github.com/FireAcademy/leaflet && \
     cd leaflet && \
     npm install 
 
