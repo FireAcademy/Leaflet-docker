@@ -11,7 +11,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
-    git wget tmux
+    git wget
+
+RUN npm install -g ts-node typescript '@types/node'
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN cd / && \

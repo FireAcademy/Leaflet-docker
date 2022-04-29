@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ -z ${FASTSYNC_CMD+x} ]; then
 	echo "FastSync command not set";
 else
@@ -12,5 +14,9 @@ chia start node
 
 touch "$CHIA_ROOT/log/debug.log"
 
-tmux new -d -s "leaflet" "cd /leaflet; while true; do REPORT_METRICS=1 testnet=$testnet npm start; done;"
-tmux wait leaflet
+cd /leaflet
+tsc
+REPORT_METRICS=1 exec node src/index.js
+
+echo "Shutting down ..."
+chia stop all -d
