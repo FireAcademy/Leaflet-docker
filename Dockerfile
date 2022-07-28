@@ -1,10 +1,10 @@
 FROM ghcr.io/chia-network/chia:main
 
 ENV service="node"
-ENV upnp="false"
+ENV upnp="true"
 ENV healthcheck="false"
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && \
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
     chmod +x nodesource_setup.sh && \
     ./nodesource_setup.sh && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
