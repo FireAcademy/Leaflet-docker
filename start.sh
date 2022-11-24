@@ -8,15 +8,15 @@ else
 	/bin/bash -c "${FASTSYNC_CMD}";
 fi
 
-sed -i 's/max_inbound_wallet: 20/max_inbound_wallet: 420/g' "$CHIA_ROOT/config/config.yaml"
-sed -i 's/target_peer_count: 80/target_peer_count: 500/g' "$CHIA_ROOT/config/config.yaml"
+# sed -i 's/max_inbound_wallet: 20/max_inbound_wallet: 420/g' "$CHIA_ROOT/config/config.yaml"
+# sed -i 's/target_peer_count: 80/target_peer_count: 500/g' "$CHIA_ROOT/config/config.yaml"
 chia start node
 
 touch "$CHIA_ROOT/log/debug.log"
 
 cd /leaflet
 tsc
-REPORT_METRICS=1 exec node src/index.js
+exec node src/index.js
 
 echo "Shutting down ..."
 chia stop all -d
