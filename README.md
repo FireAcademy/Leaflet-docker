@@ -2,6 +2,4 @@
 
 Kudos to [this repo](https://github.com/Chia-Network/chia-docker)
 
-```
-ghcr.io/fireacademy/leaflet:1.2.7
-```
+Archived. Please go here instead: [https://github.com/fireacademy/leaflet](https://github.com/fireacademy/leaflet)
